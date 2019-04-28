@@ -45,7 +45,7 @@ CREATE TABLE siblings AS
 CREATE TABLE sentences AS
   SELECT x.first || " and " || x.second || " are " || y.size || " siblings" AS sentence
     FROM siblings AS x, size_of_dogs AS y, size_of_dogs AS z
-    WHERE x.first = y.name AND x.second = z.name AND b.size = z.size;
+    WHERE x.first = y.name AND x.second = z.name AND y.size = z.size;
 
 -- Ways to stack 4 dogs to a height of at least 170, ordered by total height
 CREATE TABLE stacks_helper(dogs, stack_height, last_height);
